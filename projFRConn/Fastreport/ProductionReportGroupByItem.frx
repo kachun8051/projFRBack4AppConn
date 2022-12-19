@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/18/2022 17:36:44" ReportInfo.CreatorVersion="2019.1.6.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+    Private Sub Data1_BeforePrint(ByVal sender As object, ByVal e As EventArgs)
+        txtStdWeight.Text = CType(Report.GetColumnValue(&quot;item.itemstandardweight&quot;), UInt16) &amp; &quot; g&quot;
+        txtWeight.Text = CType(Report.GetColumnValue(&quot;item.weightingram&quot;), Double).ToString(&quot;N2&quot;) &amp; &quot; g&quot;
+        txtSellingPrice.Text = &quot;$&quot; &amp; CType(Report.GetColumnValue(&quot;item.sellingprice&quot;), Decimal).ToString(&quot;N2&quot;)
+        txtSumOfWeight.Text = CType(Report.GetTotalValue(&quot;SumOfWeight&quot;), Double).ToString(&quot;N2&quot;) &amp; &quot; g&quot;
+        txtSumOfSellingPrice.Text = &quot;HK$&quot; &amp; CType(Report.GetTotalValue(&quot;SumOfPrice&quot;), Decimal).ToString(&quot;N2&quot;)
+        Dim paramWhichDate as String = CType(Report.GetParameterValue(&quot;WhichDate&quot;), String)
+        If paramWhichDate = &quot;&quot; Then
+           txtTitle.Text = &quot;Daily Production Report&quot;
+        Else
+           txtTitle.Text = &quot;Daily Production Report (&quot; &amp; paramWhichDate &amp; &quot;)&quot;
+        End If
+        
+    End Sub
+
+    Private Sub GroupFooter1_BeforePrint(ByVal sender As object, ByVal e As EventArgs)
+      txtGroupSumOfWeight.Text = CType(Report.GetTotalValue(&quot;GroupSumOfWeight&quot;), Double).ToString(&quot;N2&quot;) &amp; &quot; g&quot;
+      txtGroupSumOfPrice.Text = &quot;$&quot; &amp; CType(Report.GetTotalValue(&quot;GroupSumOfPrice&quot;), Decimal).ToString(&quot;N2&quot;)
+    End Sub
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqZdU0EYI0kStOMroaY/RtnZzjTz0hx5nSDHY4KM97pJycM8ahvaDU0prOa6cSGuFp4vV7T91tQu6MgJTUgDQr8FHMpmoFhUVjzp3xXXW0TKmCgv0fzwauCMy8qt/BlGMJvN4BMZH1gmnttywbIj0y39K8/uPGBC2oE3mn6F3tzsoutJ11Jx5GY8aiuaZyZ0faRLVy6n8pyEjX3X4m+zTnSv8mYADwSD7NtIroGImbu+0=">
+      <TableDataSource Name="item" DataType="System.Int32" Enabled="true" TableName="item">
+        <Column Name="objectId" DataType="System.String"/>
+        <Column Name="itemnum" DataType="System.UInt32"/>
+        <Column Name="itemname" DataType="System.String"/>
+        <Column Name="itemname2" DataType="System.String"/>
+        <Column Name="itemuom" DataType="System.String"/>
+        <Column Name="itemuom2" DataType="System.Byte"/>
+        <Column Name="itemstandardweight" DataType="System.UInt16"/>
+        <Column Name="itemprice" DataType="System.Byte"/>
+        <Column Name="weightingram" DataType="System.Double"/>
+        <Column Name="sellingprice" DataType="System.Decimal"/>
+        <Column Name="barcode" DataType="System.UInt64"/>
+        <Column Name="packingdt" DataType="System.String"/>
+        <Column Name="createdAt" DataType="System.DateTime"/>
+        <Column Name="updatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+    </XmlDataConnection>
+    <Parameter Name="WhichDate" DataType="System.String"/>
+    <Total Name="SumOfWeight" Expression="[item.weightingram]" Evaluator="Data1"/>
+    <Total Name="SumOfPrice" Expression="[item.sellingprice]" Evaluator="Data1"/>
+    <Total Name="GroupSumOfWeight" Expression="[item.weightingram]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="GroupSumOfPrice" Expression="[item.sellingprice]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5">
+    <ReportTitleBand Name="ReportTitle1" Width="756" Height="47.25">
+      <TextObject Name="txtTitle" Left="9.45" Top="9.45" Width="737.1" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold, Underline"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="51.37" Width="756" Height="28.35">
+      <TextObject Name="Text2" Left="9.45" Width="85.05" Height="18.9" Text="Item No." Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="500.85" Width="94.5" Height="18.9" Text="weight" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="340.2" Width="103.95" Height="18.9" Text="std. weight" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text11" Left="604.8" Width="113.4" Height="18.9" Text="Selling Price" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="103.95" Width="151.2" Height="18.9" Text="Item Name" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="83.85" Width="756" Height="51.03" Condition="[item.itemnum]">
+      <TextObject Name="Text8" Left="9.45" Top="9.45" Width="66.15" Height="18.9" Text="[[item.itemnum]]"/>
+      <TextObject Name="Text5" Left="103.95" Top="9.45" Width="245.7" Height="18.9" Text="[item.itemname]" AutoShrink="FontWidth" Font="Arial, 11pt"/>
+      <TextObject Name="Text4" Left="103.95" Top="28.35" Width="245.7" Height="18.9" Text="[item.itemname2]" Font="Arial, 11pt"/>
+      <TextObject Name="txtStdWeight" Left="368.55" Top="9.45" Width="75.6" Height="18.9" HorzAlign="Right" Font="Arial, 12pt"/>
+      <DataBand Name="Data1" Top="139" Width="756" Height="22.68" BeforePrintEvent="Data1_BeforePrint" DataSource="item">
+        <TextObject Name="txtWeight" Left="500.85" Top="3.78" Width="94.5" Height="18.9" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="txtSellingPrice" Left="623.7" Top="3.78" Width="94.5" Height="18.9" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text1" Left="236.25" Top="3.78" Width="160.65" Height="18.9" Text="[item.packingdt]" Font="Arial, 11pt"/>
+        <TextObject Name="txtPackedDt" Left="103.95" Top="3.78" Width="141.75" Height="18.9" Text="Packed DateTime:" Font="Arial, 11pt"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="165.8" Width="756" Height="47.25" BeforePrintEvent="GroupFooter1_BeforePrint">
+        <TextObject Name="txtGroupSumOfWeight" Left="481.95" Top="9.45" Width="113.4" Height="28.35" Text="[GroupSumOfWeight]" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
+        <TextObject Name="Text30" Left="378" Top="9.45" Width="103.95" Height="18.9" Text="Sub Total:" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
+        <LineObject Name="Line2" Left="737.1" Top="5.67" Width="-340.2"/>
+        <TextObject Name="txtGroupSumOfPrice" Left="614.25" Top="9.45" Width="103.95" Height="18.9" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 12pt, style=Bold" Trimming="EllipsisCharacter"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="217.18" Width="756" Height="47.25">
+      <TextObject Name="Text12" Left="378" Top="9.45" Width="103.95" Height="18.9" Text="Total:" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="txtSumOfWeight" Left="481.95" Top="9.45" Width="113.4" Height="28.35" Text="[SumOfWeight]" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="txtSumOfSellingPrice" Left="604.8" Top="9.45" Width="113.4" Height="28.35" Text="[SumOfPrice]" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
+      <LineObject Name="Line1" Left="9.45" Top="5.67" Width="727.65"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="268.55" Width="756" Height="28.35">
+      <TextObject Name="Text27" Left="548.07" Top="3.78" Width="198.41" Height="18.9" Text="[Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text28" Left="415.8" Top="3.78" Width="132.3" Height="18.9" Text="Print Date:" HorzAlign="Right" Font="Arial, 11pt"/>
+      <TextObject Name="Text3" Left="18.9" Top="3.78" Width="160.65" Height="18.9" Text="[PageNofM]" Font="Arial, 11pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="itemlist">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="item" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="item">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="objectId" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemnum" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemname" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemname2" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemuom" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemuom2" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemstandardweight" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="itemprice" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="weightingram" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="sellingprice" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="barcode" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="packingdt" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="createdAt" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="updatedAt" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="objectId" type="xsd:string"/>
+	<xsd:element name="itemnum" type="xsd:string"/>
+	<xsd:element name="itemname" type="xsd:string"/>
+	<xsd:element name="itemname2" type="xsd:string"/>
+	<xsd:element name="itemuom" type="xsd:string"/>
+	<xsd:element name="itemuom2" type="xsd:int"/>
+	<xsd:element name="itemstandardweight" type="xsd:int"/>
+	<xsd:element name="itemprice" type="xsd:decimal"/>
+	<xsd:element name="weightingram" type="xsd:decimal"/>
+	<xsd:element name="sellingprice" type="xsd:decimal"/>
+	<xsd:element name="barcode" type="xsd:string"/>
+	<xsd:element name="packingdt" type="xsd:string"/>
+	<xsd:element name="createdAt" type="xsd:dateTime"/>
+	<xsd:element name="updatedAt" type="xsd:dateTime"/>
+</xsd:schema>
