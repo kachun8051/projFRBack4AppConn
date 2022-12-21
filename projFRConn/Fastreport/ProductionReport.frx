@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/21/2022 18:57:04" ReportInfo.CreatorVersion="2019.1.6.0">
+<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/21/2022 23:56:22" ReportInfo.CreatorVersion="2019.1.6.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -45,7 +45,7 @@ Namespace FastReport
 End Namespace
 </ScriptText>
   <Dictionary>
-    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqlfyl/7wT8MMj/7yn9ZCVUiLkZAunUNE+6bnnz5ouzhUs8zL6EtS9HT/mWHFy5LxOkMdzv3gPqxD/m73z0aN9gafVLlI0S0/s46b4+jpp7AxTzIoFo4SPo2M13o0VNGKMhprFEAGzWY1YvxdcG21UhmMhVrQidrLqevjPa0YZX4Fis8T3CU2t32lYx0ZgFwDs4ilsQ+Rr1b0iuBaPwdGM3mmjEdh8+4dGtqH4hwV/Qk4=">
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqlfyl/7wT8MMj/7yn9ZCVUiLkZAunUNE+6bnnz5ouzhUs8zL6EtS9HT/mWHFy5LxOkMdzv3gPqxD/m73z0aN9gafVLlI0S0/s46b4+jpp7AxTzIoFo4SPo2M13o0VNGKMhprFEAGzWY1YvxdcG21UhmMhVrQidrLqevjPa0YZX4Fis8T3CU2t32lYx0ZgFwDs4ilsQ+Rr1b0iuBaPwdGM3hna6xtbp6f6Y4VOVtCNXSY=">
       <TableDataSource Name="item" DataType="System.Int32" Enabled="true" TableName="item">
         <Column Name="objectId" DataType="System.String"/>
         <Column Name="itemnum" DataType="System.UInt32"/>
@@ -74,14 +74,14 @@ End Namespace
     <ReportTitleBand Name="ReportTitle1" Width="756" Height="47.25">
       <TextObject Name="txtTitle" Left="9.45" Top="9.45" Width="737.1" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
     </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="51.37" Width="756" Height="28.35">
+    <PageHeaderBand Name="PageHeader1" Top="49.69" Width="756" Height="28.35">
       <TextObject Name="Text2" Left="9.45" Width="122.85" Height="18.9" Text="Item No." Font="Arial, 12pt, style=Bold"/>
       <TextObject Name="Text7" Left="500.85" Width="94.5" Height="18.9" Text="weight" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
       <TextObject Name="Text9" Left="387.45" Width="103.95" Height="18.9" Text="std. weight" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
       <TextObject Name="Text11" Left="604.8" Width="113.4" Height="18.9" Text="Selling Price" HorzAlign="Right" Font="Arial, 12pt, style=Bold"/>
       <TextObject Name="Text6" Left="141.75" Width="236.25" Height="18.9" Text="Item Name" Font="Arial, 12pt, style=Bold"/>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="83.85" Width="756" Height="67.85" BeforePrintEvent="Data1_BeforePrint" DataSource="item">
+    <DataBand Name="Data1" Top="80.48" Width="756" Height="67.85" BeforePrintEvent="Data1_BeforePrint" DataSource="item">
       <TextObject Name="Text1" Left="274.05" Top="47.25" Width="245.7" Height="18.9" Text="[item.packingdt]" Font="Arial, 11pt"/>
       <TextObject Name="Text3" Left="9.45" Top="9.45" Width="66.15" Height="18.9" Text="[item.itemnum]" Font="Arial, 11pt"/>
       <TextObject Name="Text5" Left="141.75" Top="9.45" Width="274.05" Height="18.9" Text="[item.itemname]" AutoShrink="FontWidth" Font="Arial, 11pt"/>
@@ -91,14 +91,14 @@ End Namespace
       <TextObject Name="txtSellingPrice" Left="623.7" Top="9.45" Width="94.5" Height="18.9" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
       <BarcodeObject Name="Barcode1" Left="75.6" Top="9.45" Width="58" Height="58" DataColumn="item.objectId" ShowText="false" Zoom="0.5" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
       <TextObject Name="txtPackedDt" Left="141.75" Top="47.25" Width="141.75" Height="18.9" Text="Packed DateTime:" Font="Arial, 11pt"/>
-      <DataFooterBand Name="DataFooter1" Top="155.82" Width="756" Height="56.7">
+      <DataFooterBand Name="DataFooter1" Top="150.77" Width="756" Height="56.7">
         <TextObject Name="Text12" Left="378" Top="18.9" Width="103.95" Height="18.9" Text="Total:" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
         <TextObject Name="txtSumOfWeight" Left="481.95" Top="18.9" Width="113.4" Height="28.35" Text="[SumOfWeight]" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
         <TextObject Name="txtSumOfSellingPrice" Left="604.8" Top="18.9" Width="113.4" Height="28.35" Text="[SumOfPrice]" HorzAlign="Right" Font="Arial, 14pt, style=Bold"/>
         <LineObject Name="Line1" Left="9.45" Top="9.45" Width="727.65"/>
       </DataFooterBand>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="216.64" Width="756" Height="28.35">
+    <PageFooterBand Name="PageFooter1" Top="209.91" Width="756" Height="28.35">
       <TextObject Name="Text27" Left="595.32" Top="9.45" Width="151.16" Height="11.34" Text="[Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
       <TextObject Name="Text28" Left="463.05" Top="9.45" Width="132.3" Height="11.34" Text="Print Date:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
     </PageFooterBand>

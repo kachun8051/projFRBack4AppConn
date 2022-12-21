@@ -1,4 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<itemlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="itemlist.xsd">    
-   <item />
+<itemlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="itemlist.xsd">
+	<item>
+		<objectId>qEcCk8OIv4</objectId>
+		<itemnum>110115</itemnum>
+		<itemname>USA Angus Wet-aged Tenderloin</itemname>
+		<itemname2>美國安格斯牛肋骨</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>100</itemstandardweight>
+		<itemprice>26</itemprice>
+		<weightingram>146.4</weightingram>
+		<sellingprice>38.1</sellingprice>
+		<barcode>011011500381014648</barcode>
+		<packingdt>2022/11/23 21:53:55</packingdt>
+		<createdAt>2022-11-23T13:53:53.223Z</createdAt>
+		<updatedAt>2022-12-06T16:42:36.384Z</updatedAt>
+	</item>
+	<item>
+		<objectId>K0I643nyRP</objectId>
+		<itemnum>130011</itemnum>
+		<itemname>Japan Kurobuta Pork Belly Slices</itemname>
+		<itemname2>日本黑豚豬腩片</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>350</itemstandardweight>
+		<itemprice>30</itemprice>
+		<weightingram>95.8</weightingram>
+		<sellingprice>28.7</sellingprice>
+		<barcode>013001100287009583</barcode>
+		<packingdt>2022/11/23 21:49:42</packingdt>
+		<createdAt>2022-11-23T13:49:41.165Z</createdAt>
+		<updatedAt>2022-12-06T16:43:41.831Z</updatedAt>
+	</item>
+	<item>
+		<objectId>JUZGHZeVY2</objectId>
+		<itemnum>130125</itemnum>
+		<itemname>Japan Kagoshima Pork Tenderloin</itemname>
+		<itemname2>日本鹿兒島黑豚豬柳</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>300</itemstandardweight>
+		<itemprice>44</itemprice>
+		<weightingram>74.3</weightingram>
+		<sellingprice>32.7</sellingprice>
+		<barcode>013012500327007438</barcode>
+		<packingdt>2022/11/23 21:50:13</packingdt>
+		<createdAt>2022-11-23T13:50:11.575Z</createdAt>
+		<updatedAt>2022-12-06T16:45:06.503Z</updatedAt>
+	</item>
+	<item>
+		<objectId>wFP8O0TeOa</objectId>
+		<itemnum>120109</itemnum>
+		<itemname>Japan Kyushu A4 Wagyu Striploin Steak</itemname>
+		<itemname2>日本九州極上和牛西冷扒</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>200</itemstandardweight>
+		<itemprice>198</itemprice>
+		<weightingram>102.2</weightingram>
+		<sellingprice>202.4</sellingprice>
+		<barcode>012010902024010228</barcode>
+		<packingdt>2022/11/21 07:55:12</packingdt>
+		<createdAt>2022-11-20T23:55:12.395Z</createdAt>
+		<updatedAt>2022-12-06T16:42:16.911Z</updatedAt>
+	</item>
+	<item>
+		<objectId>n0yBVvsvNx</objectId>
+		<itemnum>120016</itemnum>
+		<itemname>Japan Wagyu Dice</itemname>
+		<itemname2>日本和牛粒</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>200</itemstandardweight>
+		<itemprice>38</itemprice>
+		<weightingram>102.2</weightingram>
+		<sellingprice>38.8</sellingprice>
+		<barcode>012001600388010224</barcode>
+		<packingdt>2022/11/21 07:55:24</packingdt>
+		<createdAt>2022-11-20T23:55:24.506Z</createdAt>
+		<updatedAt>2022-12-06T16:42:48.345Z</updatedAt>
+	</item>
+	<item>
+		<objectId>PCse7etzEC</objectId>
+		<itemnum>140102</itemnum>
+		<itemname>Holland Cod Fish Portion</itemname>
+		<itemname2>荷蘭鱈魚塊</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>350</itemstandardweight>
+		<itemprice>20</itemprice>
+		<weightingram>102.2</weightingram>
+		<sellingprice>20.4</sellingprice>
+		<barcode>014010200204010221</barcode>
+		<packingdt>2022/11/21 07:55:29</packingdt>
+		<createdAt>2022-11-20T23:55:29.505Z</createdAt>
+		<updatedAt>2022-12-06T16:43:11.175Z</updatedAt>
+	</item>
+	<item>
+		<objectId>EiPmagexZI</objectId>
+		<itemnum>120016</itemnum>
+		<itemname>Japan Wagyu Dice</itemname>
+		<itemname2>日本和牛粒</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>200</itemstandardweight>
+		<itemprice>38</itemprice>
+		<weightingram>102.2</weightingram>
+		<sellingprice>38.8</sellingprice>
+		<barcode>012001600388010224</barcode>
+		<packingdt>2022/11/21 07:55:37</packingdt>
+		<createdAt>2022-11-20T23:55:37.841Z</createdAt>
+		<updatedAt>2022-12-06T16:43:58.001Z</updatedAt>
+	</item>
+	<item>
+		<objectId>f7T8cjZQoA</objectId>
+		<itemnum>140103</itemnum>
+		<itemname>Holland Sole</itemname>
+		<itemname2>荷蘭龍利魚</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>200</itemstandardweight>
+		<itemprice>22</itemprice>
+		<weightingram>27.8</weightingram>
+		<sellingprice>6.1</sellingprice>
+		<barcode>014010300061002789</barcode>
+		<packingdt>2022/11/15 21:53:54</packingdt>
+		<createdAt>2022-11-13T13:53:51.977Z</createdAt>
+		<updatedAt>2022-12-06T16:42:59.360Z</updatedAt>
+	</item>
+	<item>
+		<objectId>xMDk0mJx39</objectId>
+		<itemnum>160002</itemnum>
+		<itemname>Spain Iberian Pork Jowl Meat</itemname>
+		<itemname2>西班牙黑毛豬頸肉</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>250</itemstandardweight>
+		<itemprice>36</itemprice>
+		<weightingram>27.7</weightingram>
+		<sellingprice>10</sellingprice>
+		<barcode>016000200100002776</barcode>
+		<packingdt>2022/11/14 21:54:23</packingdt>
+		<createdAt>2022-11-13T13:54:21.004Z</createdAt>
+		<updatedAt>2022-12-06T16:42:07.114Z</updatedAt>
+	</item>
+	<item>
+		<objectId>LXJo84HR61</objectId>
+		<itemnum>110111</itemnum>
+		<itemname>USA Angus Premium Hotpot Beef</itemname>
+		<itemname2>美國安格斯特級濕式熟成肥牛</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>150</itemstandardweight>
+		<itemprice>41</itemprice>
+		<weightingram>27.8</weightingram>
+		<sellingprice>11.4</sellingprice>
+		<barcode>011011100114002784</barcode>
+		<packingdt>2022/11/13 21:54:15</packingdt>
+		<createdAt>2022-11-13T13:54:13.122Z</createdAt>
+		<updatedAt>2022-12-06T16:43:30.012Z</updatedAt>
+	</item>
+	<item>
+		<objectId>vr4fN8poEq</objectId>
+		<itemnum>130116</itemnum>
+		<itemname>Japan Kagoshima Pork Collar Flakes</itemname>
+		<itemname2>日本鹿兒島黑豚梅頭片</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>100</itemstandardweight>
+		<itemprice>44</itemprice>
+		<weightingram>27.8</weightingram>
+		<sellingprice>12.2</sellingprice>
+		<barcode>013011600122002782</barcode>
+		<packingdt>2022/11/13 21:54:20</packingdt>
+		<createdAt>2022-11-13T13:54:18.109Z</createdAt>
+		<updatedAt>2022-12-06T16:42:25.911Z</updatedAt>
+	</item>
+	<item>
+		<objectId>OgfpAhVqhn</objectId>
+		<itemnum>130011</itemnum>
+		<itemname>Japan Kurobuta Pork Belly Slices</itemname>
+		<itemname2>日本黑豚豬腩片</itemname2>
+		<itemuom>100g</itemuom>
+		<itemuom2>100</itemuom2>
+		<itemstandardweight>350</itemstandardweight>
+		<itemprice>30</itemprice>
+		<weightingram>27.8</weightingram>
+		<sellingprice>8.3</sellingprice>
+		<barcode>013001100083002782</barcode>
+		<packingdt>2022/11/13 21:53:15</packingdt>
+		<createdAt>2022-11-13T13:53:13.022Z</createdAt>
+		<updatedAt>2022-12-06T16:43:20.665Z</updatedAt>
+	</item>
 </itemlist>
