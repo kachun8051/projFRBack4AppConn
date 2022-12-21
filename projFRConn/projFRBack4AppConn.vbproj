@@ -84,9 +84,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsFetchData.vb" />
-    <Compile Include="clsRecord.vb" />
-    <Compile Include="clsReport.vb" />
+    <Compile Include="objects\clsFetchData.vb" />
+    <Compile Include="objects\clsRecord.vb" />
+    <Compile Include="objects\clsReport.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

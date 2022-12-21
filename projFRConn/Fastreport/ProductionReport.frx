@@ -28,8 +28,8 @@ Namespace FastReport
         Select Case paramRangeType
            Case &quot;daily&quot;
               txtTitle.Text = &quot;Daily Production Report (&quot; &amp; paramWhichDateStart &amp; &quot;)&quot;
-           Case &quot;monthy&quot;
-              txtTitle.Text = &quot;Monthy Production Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
+           Case &quot;monthly&quot;
+              txtTitle.Text = &quot;Monthly Production Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
            Case &quot;weekly&quot;
               txtTitle.Text = &quot;Weekly Production Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
            Case Else

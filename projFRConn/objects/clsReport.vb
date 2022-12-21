@@ -1,17 +1,25 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Xml
-Imports FastReport.Export.Dbf
 
 Public Class clsReport
     Private ds As DataSet
     Private xmlFile, xsdFile, rptFile As String
+    ' 3 parameters for report
+    Private pStart, pEnd, pRangeType As String
 
     Sub New()
         xmlFile = IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fastreport", "itemlist.xml")
         xsdFile = IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fastreport", "itemlist.xsd")
         rptFile = IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fastreport", "ProductionReport.frx")
     End Sub
+
+    Public Sub setParams(dtStart As String, dtEnd As String, rType As String)
+        pStart = dtStart
+        pEnd = dtEnd
+        pRangeType = rType
+    End Sub
+
     Public Function ShowReport(ByRef blRecord As BindingList(Of clsRecord)) As Boolean
         Dim isInited As Boolean = InitTheDataSet()
         If isInited = False Then
@@ -21,11 +29,26 @@ Public Class clsReport
         If isFilled = False Then
             Return False
         End If
-        Dim rpt As New FastReport.Report
-        rpt.Load(rptFile)
-        rpt.RegisterData(ds)
-        rpt.Show()
-        Return True
+        Try
+            Dim rpt As New FastReport.Report
+            rpt.Load(rptFile)
+            If pStart <> String.Empty Then
+                rpt.SetParameterValue("WhichStartDate", pStart)
+            End If
+            If pEnd <> String.Empty Then
+                rpt.SetParameterValue("WhichEndDate", pEnd)
+            End If
+            If pRangeType <> String.Empty Then
+                rpt.SetParameterValue("RangeType", pRangeType)
+            End If
+            rpt.RegisterData(ds)
+            rpt.Show(vbFalse)
+            Return True
+        Catch ex As Exception
+            Diagnostics.Debug.WriteLine("clsReport.ShowReport: " & vbCrLf & ex.Message)
+            Return False
+        End Try
+
     End Function
 
     Private Function InitTheDataSet() As Boolean
@@ -34,12 +57,11 @@ Public Class clsReport
             Dim sr As StringReader = New StringReader(strXmlContent)
             Dim xtr As XmlTextReader = New XmlTextReader(sr)
             ds = New DataSet
-            'ds.DataSetName = "ds"
             ds.ReadXml(xtr)
             ds.ReadXmlSchema(xsdFile)
             Return True
         Catch ex As Exception
-            ' modCommon.WriteErrEvtLog("clsReport.InitTheDataSet: " & vbCrLf & ex.Message)
+            Diagnostics.Debug.WriteLine("clsReport.InitTheDataSet: " & vbCrLf & ex.Message)
             Return False
         End Try
     End Function
