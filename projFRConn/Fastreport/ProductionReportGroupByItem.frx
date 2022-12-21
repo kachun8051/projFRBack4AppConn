@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/18/2022 17:36:44" ReportInfo.CreatorVersion="2019.1.6.0">
+<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/20/2022 21:56:30" ReportInfo.CreatorVersion="2019.1.6.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -39,7 +39,7 @@ Namespace FastReport
 End Namespace
 </ScriptText>
   <Dictionary>
-    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqZdU0EYI0kStOMroaY/RtnZzjTz0hx5nSDHY4KM97pJycM8ahvaDU0prOa6cSGuFp4vV7T91tQu6MgJTUgDQr8FHMpmoFhUVjzp3xXXW0TKmCgv0fzwauCMy8qt/BlGMJvN4BMZH1gmnttywbIj0y39K8/uPGBC2oE3mn6F3tzsoutJ11Jx5GY8aiuaZyZ0faRLVy6n8pyEjX3X4m+zTnSv8mYADwSD7NtIroGImbu+0=">
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqZdU0EYI0kStOMroaY/RtnZzjTz0hx5nSDHY4KM97pJycM8ahvaDU0prOa6cSGuFp4vV7T91tQu6MgJTUgDQr8FHMpmoFhUVjzp3xXXW0TKmCgv0fzwauCMy8qt/BlGMJvN4BMZH1gmnttywbIj0y39K8/uPGBC2oE3mn6F3tzsoutJ11Jx5GY8aiuaZyZ0faRLVy6n8pyEjX3X4m+zTnSqDOc+j0aK3alODsUTgc9Xg=">
       <TableDataSource Name="item" DataType="System.Int32" Enabled="true" TableName="item">
         <Column Name="objectId" DataType="System.String"/>
         <Column Name="itemnum" DataType="System.UInt32"/>
@@ -57,7 +57,7 @@ End Namespace
         <Column Name="updatedAt" DataType="System.DateTime"/>
       </TableDataSource>
     </XmlDataConnection>
-    <Parameter Name="WhichDate" DataType="System.String"/>
+    <Parameter Name="WhichStartDate" DataType="System.String"/>
     <Total Name="SumOfWeight" Expression="[item.weightingram]" Evaluator="Data1"/>
     <Total Name="SumOfPrice" Expression="[item.sellingprice]" Evaluator="Data1"/>
     <Total Name="GroupSumOfWeight" Expression="[item.weightingram]" Evaluator="Data1" PrintOn="GroupFooter1"/>

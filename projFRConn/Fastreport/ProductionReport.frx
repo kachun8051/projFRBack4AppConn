@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/19/2022 18:26:38" ReportInfo.CreatorVersion="2019.1.6.0">
+<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/20/2022 21:55:18" ReportInfo.CreatorVersion="2019.1.6.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -34,7 +34,7 @@ Namespace FastReport
 End Namespace
 </ScriptText>
   <Dictionary>
-    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqlfyl/7wT8MMj/7yn9ZCVUiLkZAunUNE+6bnnz5ouzhUs8zL6EtS9HT/mWHFy5LxOkMdzv3gPqxD/m73z0aN9gafVLlI0S0/s46b4+jpp7AxTzIoFo4SPo2M13o0VNGKMhprFEAGzWY1YvxdcG21UhmMhVrQidrLqevjPa0YZX4Fis8T3CU2t32lYx0ZgFwDs4ilsQ+Rr1b0iuBaPwdGM3lc8lmBIx9kl9MKTaasgvLY=">
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqlfyl/7wT8MMj/7yn9ZCVUiLkZAunUNE+6bnnz5ouzhUs8zL6EtS9HT/mWHFy5LxOkMdzv3gPqxD/m73z0aN9gafVLlI0S0/s46b4+jpp7AxTzIoFo4SPo2M13o0VNGKMhprFEAGzWY1YvxdcG21UhmMhVrQidrLqevjPa0YZX4Fis8T3CU2t32lYx0ZgFwDs4ilsQ+Rr1b0iuBaPwdGM3mdTzhxSI8ZMvsFMejB4+cc=">
       <TableDataSource Name="item" DataType="System.Int32" Enabled="true" TableName="item">
         <Column Name="objectId" DataType="System.String"/>
         <Column Name="itemnum" DataType="System.UInt32"/>
@@ -53,7 +53,9 @@ End Namespace
       </TableDataSource>
     </XmlDataConnection>
     <Relation Name="itemlist_item" ParentDataSource="null" ChildDataSource="null" ParentColumns="itemlist_Id" ChildColumns="itemlist_Id" Enabled="true"/>
-    <Parameter Name="WhichDate" DataType="System.String"/>
+    <Parameter Name="WhichStartDate" DataType="System.String"/>
+    <Parameter Name="WhichEndDate" DataType="System.String"/>
+    <Parameter Name="RangeType" DataType="System.String"/>
     <Total Name="SumOfWeight" Expression="[item.weightingram]" Evaluator="Data1"/>
     <Total Name="SumOfPrice" Expression="[item.sellingprice]" Evaluator="Data1"/>
   </Dictionary>
