@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/20/2022 21:56:30" ReportInfo.CreatorVersion="2019.1.6.0">
+<Report ScriptLanguage="Vb" DoublePass="true" ReportInfo.Created="12/15/2022 20:57:46" ReportInfo.Modified="12/21/2022 19:00:07" ReportInfo.CreatorVersion="2019.1.6.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -22,12 +22,25 @@ Namespace FastReport
         txtSellingPrice.Text = &quot;$&quot; &amp; CType(Report.GetColumnValue(&quot;item.sellingprice&quot;), Decimal).ToString(&quot;N2&quot;)
         txtSumOfWeight.Text = CType(Report.GetTotalValue(&quot;SumOfWeight&quot;), Double).ToString(&quot;N2&quot;) &amp; &quot; g&quot;
         txtSumOfSellingPrice.Text = &quot;HK$&quot; &amp; CType(Report.GetTotalValue(&quot;SumOfPrice&quot;), Decimal).ToString(&quot;N2&quot;)
-        Dim paramWhichDate as String = CType(Report.GetParameterValue(&quot;WhichDate&quot;), String)
-        If paramWhichDate = &quot;&quot; Then
-           txtTitle.Text = &quot;Daily Production Report&quot;
-        Else
-           txtTitle.Text = &quot;Daily Production Report (&quot; &amp; paramWhichDate &amp; &quot;)&quot;
-        End If
+        'Dim paramWhichDate as String = CType(Report.GetParameterValue(&quot;WhichDate&quot;), String)
+        'If paramWhichDate = &quot;&quot; Then
+        '   txtTitle.Text = &quot;Daily Production Report&quot;
+        'Else
+        '   txtTitle.Text = &quot;Daily Production Report (&quot; &amp; paramWhichDate &amp; &quot;)&quot;
+        'End If
+        Dim paramWhichDateStart as String = CType(Report.GetParameterValue(&quot;WhichStartDate&quot;), String)
+        Dim paramWhichDateEnd as String = CType(Report.GetParameterValue(&quot;WhichEndDate&quot;), String)
+        Dim paramRangeType as String = CType(Report.GetParameterValue(&quot;RangeType&quot;), String)
+        Select Case paramRangeType
+          Case &quot;daily&quot;
+            txtTitle.Text = &quot;Daily Production Item Group Report (&quot; &amp; paramWhichDateStart &amp; &quot;)&quot;
+          Case &quot;monthy&quot;
+            txtTitle.Text = &quot;Monthy Production Item Group Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
+          Case &quot;weekly&quot;
+            txtTitle.Text = &quot;Weekly Production Item Group Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
+          Case Else
+            txtTitle.Text = &quot;Production Item Group Report (&quot; &amp; paramWhichDateStart &amp; &quot; - &quot; &amp; paramWhichDateEnd &amp; &quot;)&quot;
+        End Select
         
     End Sub
 
@@ -39,7 +52,7 @@ Namespace FastReport
 End Namespace
 </ScriptText>
   <Dictionary>
-    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqZdU0EYI0kStOMroaY/RtnZzjTz0hx5nSDHY4KM97pJycM8ahvaDU0prOa6cSGuFp4vV7T91tQu6MgJTUgDQr8FHMpmoFhUVjzp3xXXW0TKmCgv0fzwauCMy8qt/BlGMJvN4BMZH1gmnttywbIj0y39K8/uPGBC2oE3mn6F3tzsoutJ11Jx5GY8aiuaZyZ0faRLVy6n8pyEjX3X4m+zTnSqDOc+j0aK3alODsUTgc9Xg=">
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqZdU0EYI0kStOMroaY/RtnZzjTz0hx5nSDHY4KM97pJycM8ahvaDU0prOa6cSGuFp4vV7T91tQu6MgJTUgDQr8FHMpmoFhUVjzp3xXXW0TKmCgv0fzwauCMy8qt/BlGMJvN4BMZH1gmnttywbIj0y39K8/uPGBC2oE3mn6F3tzsoutJ11Jx5GY8aiuaZyZ0faRLVy6n8pyEjX3X4m+zTnSppO7dqkUTZYAZXq1ShfieU=">
       <TableDataSource Name="item" DataType="System.Int32" Enabled="true" TableName="item">
         <Column Name="objectId" DataType="System.String"/>
         <Column Name="itemnum" DataType="System.UInt32"/>
@@ -58,6 +71,8 @@ End Namespace
       </TableDataSource>
     </XmlDataConnection>
     <Parameter Name="WhichStartDate" DataType="System.String"/>
+    <Parameter Name="WhichEndDate" DataType="System.String"/>
+    <Parameter Name="RangeType" DataType="System.String"/>
     <Total Name="SumOfWeight" Expression="[item.weightingram]" Evaluator="Data1"/>
     <Total Name="SumOfPrice" Expression="[item.sellingprice]" Evaluator="Data1"/>
     <Total Name="GroupSumOfWeight" Expression="[item.weightingram]" Evaluator="Data1" PrintOn="GroupFooter1"/>
